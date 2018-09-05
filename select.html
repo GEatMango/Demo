@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+<link rel="stylesheet" href="bootstrap-select.min.css">
+<script src="jquery-2.0.3.min.js"></script>
+<script src="bootstrap-select.min.js"></script>
+<!--<script src="defaults-zh_CN.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/i18n/defaults-*.min.js"></script>-->
+		<title></title>
+	</head>
+	<body>
+		<div class="form-group">
+    <label class="col-sm-3 control-label">客资类型：</label>
+    <div class="col-sm-4">
+    <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple data-live-search="false">
+     <option value="0">苹果</option>
+     <option value="1">菠萝</option>
+     <option value="2">香蕉</option>
+     <option value="3">火龙果</option>
+     <option value="4">梨子</option>
+     <option value="5">草莓</option>
+     <option value="6">哈密瓜</option>
+     <option value="7">椰子</option>
+     <option value="8">猕猴桃</option>
+     <option value="9">桃子</option>
+    </select>
+    </div>
+    </div>
+    <input type="button" onclick="save()" value="保存" />
+	</body>
+	<script type="text/javascript">
+		$(window).on('load', function () {
+		 $('#usertype').selectpicker({
+		 'selectedText': 'cat'
+		 });
+		});
+		function save(){
+			var userTypearr = $("#usertype").val();// 传到后台为【】
+			var userType = userTypearr.join(",");
+			alert(userType);
+		}
+	</script>
+</html>
